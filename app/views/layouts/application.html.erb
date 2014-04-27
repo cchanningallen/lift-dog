@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LiftDog</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700' rel='stylesheet' type='text/css'>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="app-frame">
+    <header id="app-header" class="row">
+      <div class="col-sm-6 app-header-left-panel">
+        <div class="pull-right title-text">Fit</div>
+      </div>
+      <div class="col-sm-6 app-header-right-panel">
+        <div class="pull-left title-text">Dog</div>
+
+        <div class="pull-right user-session-fields">
+          <% if user_signed_in? %>
+            <%= current_user.email %>
+            <span class="slate">&nbsp;|&nbsp;</span>
+            <%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn' %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+
+    <section id="app-main">
+      <div class="row">
+        <div class="col-sm-offset-1 col-sm-10">
+          <div class="row">
+            <div class="alerts-wrapper">
+              <%= render 'application/flash_messages', flash: flash %>
+            </div>
+
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

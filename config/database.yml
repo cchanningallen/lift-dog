@@ -1,0 +1,27 @@
+development:
+  host: 172.16.10.10
+  port: 5432
+  adapter: postgresql
+  encoding: unicode
+  database: lift_dog_development
+  pool: 5
+  username: developer
+  password:
+
+test:
+  host: 172.16.10.10
+  port: 5432
+  adapter: postgresql
+  encoding: unicode
+  database: lift_dog_test
+  pool: 5
+  username: developer
+  password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: lift_dog
+  pool: 5
+  username: lift_dog
+  password:
