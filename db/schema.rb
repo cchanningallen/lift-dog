@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427034936) do
+ActiveRecord::Schema.define(version: 20140428161542) do
 
   create_table "activities", force: true do |t|
     t.integer  "collector_id"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20140427034936) do
     t.integer  "score"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_collection_id"
   end
 
   add_index "collections", ["exercise_id"], name: "index_collections_on_exercise_id", using: :btree
